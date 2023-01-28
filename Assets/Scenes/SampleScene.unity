@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39361e22239d580eaa36d7294d1a15a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
   oozeCounter: {fileID: 631035134}
 --- !u!1 &149031897
 GameObject:
@@ -632,7 +631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b95f2557cab70b4e94ee84e67d5c530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stock: 0
+  amount: 0
+  period: 5
 --- !u!4 &631035135
 Transform:
   m_ObjectHideFlags: 0
