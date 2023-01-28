@@ -11,7 +11,15 @@ public class OozeCounter : MonoBehaviour
     public int amount;
 
     private float nextActionTime = 0.0f;
+
+    // Period in seconds when we remove some ooze
     public float period = 5.0f;
+
+    // The amount to remove every "period" time
+    public int amountToRemovePeriodically = 5;
+
+    // Maximum amount of ooze
+    public int maxAmount = 200;
 
     // Set the stock
     public void SetAmount(int units)
@@ -32,13 +40,24 @@ public class OozeCounter : MonoBehaviour
 
     void FixedUpdate()
     {
+        decreaseOozePeriodically();
+    }
+
+    /**
+      * Based on the "period" variable
+      * remove some ooze periodically
+      */
+    void decreaseOozePeriodically()
+    {
         if (Time.time > nextActionTime ) {
             nextActionTime += period;
             
             if (amount > 0) {
-                AddAmount(-5);
+                AddAmount(amountToRemovePeriodically * -1);
             }
 
+            // In case the amount gets lower than 0, we set it 
+            // to zero as a very minimum
             if (amount < 0) {
                 amount = 0;
             }
