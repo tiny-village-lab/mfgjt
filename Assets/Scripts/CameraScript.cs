@@ -11,6 +11,4 @@ public class CameraScript : MonoBehaviour
     {
         transform.position = player.position + cameraOffset;
     }
-
-    //test
 }
