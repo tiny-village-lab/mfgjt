@@ -6,7 +6,7 @@ public class OozePickup : MonoBehaviour
 {
 
     public OozeCounter oozeScript;
-
+    public float rotateSpeed;
     [SerializeField] int dropAmount;
     [SerializeField] float size;
 
@@ -27,6 +27,12 @@ public class OozePickup : MonoBehaviour
             size = 3;
         }
         transform.localScale = new Vector3(size/2,size/2,size/2);
+    }
+
+
+    private void Update()
+    {
+        transform.Rotate(0, rotateSpeed*Time.deltaTime, 0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
