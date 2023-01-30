@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     [SerializeField] LayerMask groundLayer;
+    public GameManager gameManager;
 
     [Header("Stats")]
     public float speed;
@@ -41,5 +42,13 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(cC.bounds.center, cC.bounds.size - new Vector3(0.1f,0,0), 0f, Vector2.down, -1f, groundLayer);
+    }
+
+    private void LateUpdate()
+    {
+        if(transform.position.y < -100)
+        {
+            gameManager.LoadScene(0);
+        }
     }
 }
