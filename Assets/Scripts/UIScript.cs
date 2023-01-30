@@ -10,6 +10,6 @@ public class UIScript : MonoBehaviour
 
     void Update()
     {
-        oozeText.text = "Ooze: " + oozeCounter.amount.ToString();  
+        oozeText.text = "Ooze: " + oozeCounter.amount.ToString() + "/" + oozeCounter.maxAmount.ToString();  
     }
 }
