@@ -470,6 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39361e22239d580eaa36d7294d1a15a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartAmount: 100
+  gameManager: {fileID: 588416511}
   oozeCounter: {fileID: 631035134}
 --- !u!95 &80315722
 Animator:
@@ -1239,6 +1241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6228cfbe3f6cd1f42a2f945fd745abd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 1150397677}
+  Health: {fileID: 80315721}
 --- !u!4 &588416512
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,7 +1912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oozeText: {fileID: 1065924658}
-  menuButtons: {fileID: 1944564246}
   oozeCounter: {fileID: 631035134}
   blendScript: {fileID: 519420034}
   buttonPanel: {fileID: 1944564246}

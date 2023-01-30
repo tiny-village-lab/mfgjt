@@ -2,18 +2,25 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public int StartAmount = 100;
+    public GameManager gameManager;
     public OozeCounter oozeCounter;
 
-    // Start is called before the first frame update
     void Start()
     {
-        oozeCounter.SetAmount(100);
+        ResetOoze();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetOoze()
     {
-        
+        oozeCounter.SetAmount(StartAmount);
+    }
+
+    private void FixedUpdate()
+    {
+        if(oozeCounter.amount == 0)
+        {
+            gameManager.Died();
+        }
     }
 }

@@ -6,27 +6,38 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public Text oozeText;
-    public GameObject menuButtons;
     public OozeCounter oozeCounter;
     public BlendingCams blendScript;
     public GameObject buttonPanel;
-    public GameObject optionsPanel; 
+    public GameObject optionsPanel;
 
+    private void Awake()
+    {
+        oozeText.gameObject.SetActive(false);
+        buttonPanel.SetActive(true);
+        optionsPanel.SetActive(false);
+
+    }
     void Update()
     {
         oozeText.text = "Ooze: " + oozeCounter.amount.ToString() + "/" + oozeCounter.maxAmount.ToString();
 
-        if (Input.GetKeyDown(KeyCode.Escape) && optionsPanel.active == true)
+        if (Input.GetKeyDown(KeyCode.Escape) && optionsPanel.activeSelf == true)
         {
-            buttonPanel.SetActive(true);
-            optionsPanel.SetActive(false);
+            MainMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && optionsPanel.activeSelf == false)
+        {
+            MainMenu();
+            blendScript.blendCams(2, 1);
         }
     }
 
     public void Play()
     {
         blendScript.blendCams(1, 2);
-        menuButtons.SetActive(false);
+        buttonPanel.SetActive(false);
+        oozeText.gameObject.SetActive(true);
     }
 
     public void Quit()
@@ -38,5 +49,13 @@ public class UIScript : MonoBehaviour
     {
         buttonPanel.SetActive(false);
         optionsPanel.SetActive(true);
+        oozeText.gameObject.SetActive(false);
+    }
+
+    public void MainMenu()
+    {
+        buttonPanel.SetActive(true);
+        optionsPanel.SetActive(false);
+        oozeText.gameObject.SetActive(false);
     }
 }
