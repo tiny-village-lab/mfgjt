@@ -7,9 +7,15 @@ public class UIScript : MonoBehaviour
 {
     public Text oozeText;
     public OozeCounter oozeCounter;
+    public BlendingCams blendScript;
 
     void Update()
     {
-        oozeText.text = "Ooze: " + oozeCounter.amount.ToString() + "/" + oozeCounter.maxAmount.ToString();  
+        oozeText.text = "Ooze: " + oozeCounter.amount.ToString() + "/" + oozeCounter.maxAmount.ToString();
+    }
+
+    public void Play()
+    {
+        blendScript.blendCams(1, 2);
     }
 }

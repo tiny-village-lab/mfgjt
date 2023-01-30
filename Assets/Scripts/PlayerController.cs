@@ -14,13 +14,11 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     public float speed;
     public float jumpPower;
-
     void Start()
     {
         rB = GetComponent<Rigidbody2D>();
         cC = GetComponent<CapsuleCollider2D>();
     }
-
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -32,18 +30,14 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
-
-
     void Jump()
     {
         rB.velocity = new Vector2(rB.velocity.x, jumpPower);
     }
-
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(cC.bounds.center, cC.bounds.size - new Vector3(0.1f,0,0), 0f, Vector2.down, -1f, groundLayer);
     }
-
     private void LateUpdate()
     {
         if(transform.position.y < -100)
