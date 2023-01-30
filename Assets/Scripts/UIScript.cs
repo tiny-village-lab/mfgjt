@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public Text oozeText;
+    public GameObject menuButtons;
     public OozeCounter oozeCounter;
     public BlendingCams blendScript;
 
@@ -17,5 +18,6 @@ public class UIScript : MonoBehaviour
     public void Play()
     {
         blendScript.blendCams(1, 2);
+        menuButtons.SetActive(false);
     }
 }

@@ -772,7 +772,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.00031354293, g: 0.3773585, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.38390887, g: 0.6037736, b: 0.38390887, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1137,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723249455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.5000005, y: 1.75, z: -10}
+  m_LocalPosition: {x: 574.75, y: 249.75, z: -1253.3357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1411,6 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oozeText: {fileID: 1065924658}
+  playButton: {fileID: 0}
   oozeCounter: {fileID: 631035134}
   blendScript: {fileID: 519420034}
 --- !u!114 &1150397678
