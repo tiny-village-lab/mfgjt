@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 202691568507065382}
   - component: {fileID: 202691568507065381}
   - component: {fileID: 202691568507065383}
-  - component: {fileID: 202691568507065380}
   - component: {fileID: -3388221677224153913}
   - component: {fileID: -3392771798850575155}
+  - component: {fileID: 8942286700107063916}
   m_Layer: 0
   m_Name: OozePickup
-  m_TagString: Untagged
+  m_TagString: OozePickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -115,22 +115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8828125, y: 1}
   m_EdgeRadius: 0
---- !u!114 &202691568507065380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202691568507065379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b8f68319aad38040a627f47b27aea26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oozeScript: {fileID: 0}
-  rotateSpeed: 50
-  dropAmount: 10
-  size: 1
 --- !u!198 &-3388221677224153913
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4910,3 +4894,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8942286700107063916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202691568507065379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6d3c8411f5d0d4092f6f49bee22da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 50
+  dropAmount: 0

@@ -4,43 +4,24 @@ using UnityEngine;
 
 public class OozePickup : MonoBehaviour
 {
-
     public OozeCounter oozeScript;
-    public float rotateSpeed;
-    [SerializeField] int dropAmount;
-    [SerializeField] float size;
 
-    private void Start()
+    int dropAmount;
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        dropAmount = Random.Range(1, 10);
-
-        if (dropAmount <= 3)
+        // check if player collides with ooze
+        if (collision.collider.gameObject.tag == "OozePickUp")
         {
-            size = 1;
-        }
-        if(dropAmount >= 4 && dropAmount <= 7)
-        {
-            size = 2;
-        }
-        if (dropAmount >= 8 && dropAmount <= 10)
-        {
-            size = 3;
-        }
-        transform.localScale = new Vector3(size/2,size/2,size/2);
-    }
-
-
-    private void Update()
-    {
-        transform.Rotate(0, rotateSpeed*Time.deltaTime, 0);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
+            dropAmount = collision.gameObject.GetComponent<OozePickupAnimation>().dropAmount;
+            // add ooze
             oozeScript.AddAmount(dropAmount);
             Debug.Log(dropAmount + " ooze picked up.");
-            Destroy(gameObject);
+            // destroy gameObject
+            Destroy(collision.gameObject);
         }
     }
+
+
 }
