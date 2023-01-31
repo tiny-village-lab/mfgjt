@@ -4,40 +4,28 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public GameObject pointA;
-    public GameObject pointB;
+
     public float speed;
-    Vector2 direction;
-    Vector3 goal;
-    string currentGoal;
+    public Transform[] waypoints;
+
+    private int destinationIndex = 0;
+    private Transform target;
 
     private void Start()
     {
-        pointA.transform.position.Set(pointA.transform.position.x, 2f , 0);
-        pointB.transform.position.Set(pointB.transform.position.x, 2f, 0);
-
-        goal = pointB.transform.position;
-        currentGoal = "B";
+        target = waypoints[0];
     }
+
     void Update()
     {
-        direction = goal-transform.position;
+        // Moves the guy to its destination
+        Vector3 dir = target.position - transform.position;
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        transform.Translate(direction.normalized*Time.deltaTime*speed);
-
-        if (direction.magnitude < 0.5f)
-        {
-            if(currentGoal == "B")
-            {
-                goal = pointA.transform.position;
-                currentGoal = "A";
-            }
-            else
-            {
-                goal = pointB.transform.position;
-                currentGoal = "B";
-            }
+        // If target is almost reached, target becomes the next waypoint
+        if (Vector3.Distance(transform.position, target.position) < 0.3f) {
+            destinationIndex = (destinationIndex + 1) % waypoints.Length;
+            target = waypoints[destinationIndex];
         }
-        
     }
 }
