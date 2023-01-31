@@ -7,9 +7,15 @@ public class EnemyPatrol : MonoBehaviour
 
     public float speed;
     public Transform[] waypoints;
+    public bool isJumping = false;
 
     private int destinationIndex = 0;
     private Transform target;
+
+    [Header("Stats")]
+    public float jumpPower;
+
+    public Rigidbody2D rb;
 
     private void Start()
     {
@@ -27,5 +33,15 @@ public class EnemyPatrol : MonoBehaviour
             destinationIndex = (destinationIndex + 1) % waypoints.Length;
             target = waypoints[destinationIndex];
         }
+    }
+
+    void Jump()
+    {
+        if (isJumping == true) {
+            return;
+        }
+
+        rb.AddForce(new Vector2(0f, jumpPower));
+        isJumping = false;
     }
 }
