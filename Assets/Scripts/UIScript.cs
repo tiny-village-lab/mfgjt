@@ -10,6 +10,7 @@ public class UIScript : MonoBehaviour
     public BlendingCams blendScript;
     public GameObject buttonPanel;
     public GameObject optionsPanel;
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class UIScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape) && optionsPanel.activeSelf == false)
         {
+            gameManager.Pause();
             MainMenu();
             blendScript.blendCams(2, 1);
         }
@@ -38,6 +40,7 @@ public class UIScript : MonoBehaviour
         blendScript.blendCams(1, 2);
         buttonPanel.SetActive(false);
         oozeText.gameObject.SetActive(true);
+        gameManager.Resume();
     }
 
     public void Quit()
@@ -50,7 +53,7 @@ public class UIScript : MonoBehaviour
         buttonPanel.SetActive(false);
         optionsPanel.SetActive(true);
         oozeText.gameObject.SetActive(false);
-    }
+    }    
 
     public void MainMenu()
     {

@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
@@ -1472,6 +1472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 1150397677}
   Health: {fileID: 80315721}
+  blendCams: {fileID: 519420034}
 --- !u!4 &588416512
 Transform:
   m_ObjectHideFlags: 0
@@ -2150,6 +2151,7 @@ MonoBehaviour:
   blendScript: {fileID: 519420034}
   buttonPanel: {fileID: 1944564246}
   optionsPanel: {fileID: 1226058010}
+  gameManager: {fileID: 588416511}
 --- !u!114 &1150397678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3793,7 +3795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1944564247
 MonoBehaviour:
   m_ObjectHideFlags: 0
