@@ -60,6 +60,7 @@ public class BrainController : MonoBehaviour
         }
 
         isVulnerable = true;
+        nextInvicibleTime = Time.time + vulnerabilityTime;
     }
 
     private void WatchVulnerabilityTime()
@@ -70,6 +71,7 @@ public class BrainController : MonoBehaviour
 
         if (Time.time > nextInvicibleTime ) {
             isVulnerable = false;
+            print("brain is now invicible");
         }
     }
 }
