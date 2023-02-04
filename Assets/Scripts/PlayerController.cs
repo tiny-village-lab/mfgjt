@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Stats")]
+    public float cameraShake;
     public float speed;
     public float jumpPower;
     void Start()
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
     // make the player fall down through a platform
     void FallDown()
     {
-        blendingCams.ShakeCamera(2, 5f, 1f);
+        blendingCams.ShakeCamera(2, cameraShake, 1f);
         cC.isTrigger = true;
         StartCoroutine(resetCc(0.8f));
     }
