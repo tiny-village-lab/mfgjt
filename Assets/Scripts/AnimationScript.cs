@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
-    public Animator animator;
+    Animator animator;
     Rigidbody2D rigidbody;
     SpriteRenderer spriteRenderer;
 
