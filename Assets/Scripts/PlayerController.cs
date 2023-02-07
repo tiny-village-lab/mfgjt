@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float cameraShake;
     public float speed;
     public float jumpPower;
+
     void Start()
     {
         rB = GetComponent<Rigidbody2D>();
